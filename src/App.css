@@ -1,38 +1,132 @@
-.App {
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(to bottom right, #D2665A, #e9d5ff, #fef3c7); */
+  background: #F75270;
+
+}
+
+.card {
+  /*background: #fff;*/
+  background: #fdefd9;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cake {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cake-base {
+  position: absolute;
+  bottom: 0;
+  width: 160px;
+  height: 80px;
+  background: #f9a8d4;
+  border-radius: 20px 20px 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cake-layer {
+  position: absolute;
+  bottom: 20px;
+  width: 160px;
+  height: 20px;
+  background: #DC143C ;
+}
+/* Wick */
+.wick {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: #111;
+}
+/* Candle body */
+.candle {
+  position: relative;
+  top: 20px;
+  width: 12px;
+  height: 50px;
+  background: #fa8148; /* light pink candle */
+  border-radius: 3px;
+  margin: 0 auto;
+}
+/* Wick */
+.wick {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: #111;
+  border-radius: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Flame */
+.flame {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 24px;
+  background: radial-gradient(circle at 50% 50%, #fde68a 40%, #f97316 80%);
+  border-radius: 50% 50% 50% 50%;
+  animation: flicker 0.6s infinite alternate;
+  box-shadow: 0 0 15px 5px rgba(249, 115, 22, 0.6);
 }
 
-@keyframes App-logo-spin {
+/* Flicker animation */
+@keyframes flicker {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-50%) scale(1);
+    opacity: 0.95;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-50%) scale(1.1);
+    opacity: 0.75;
   }
+}
+
+
+.title {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #DC143C;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: #374151;
+}
+
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: #DC143C;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  background: #DC143C;
 }
